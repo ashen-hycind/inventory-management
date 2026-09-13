@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "vmart-hostel-shop-9281"
+  },
+  "targets": {
+    "vmart-hostel-shop-9281": {
+      "hosting": {
+        "student": [
+          "vmart-hostel-shop-9281"
+        ],
+        "admin": [
+          "vmart-admin-shop-9281"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

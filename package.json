@@ -1,0 +1,24 @@
+{
+  "name": "hostel-shop-inventory",
+  "version": "1.0.0",
+  "description": "Hostel Shop Inventory Management Web Application",
+  "private": true,
+  "scripts": {
+    "client:dev": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "build": "npm --prefix client run build:all",
+    "functions:install": "npm --prefix functions install",
+    "seed": "node scripts/seed-data.js",
+    "emulators": "npx firebase-tools emulators:start",
+    "deploy:hosting": "npm --prefix client run build:all ; npx firebase-tools deploy --only hosting",
+    "deploy:student": "npm --prefix client run build:student ; npx firebase-tools deploy --only hosting:student",
+    "deploy:admin": "npm --prefix client run build:admin ; npx firebase-tools deploy --only hosting:admin",
+    "deploy": "npm --prefix client run build:all ; npx firebase-tools deploy --only hosting",
+    "deploy:firestore": "npx firebase-tools deploy --only firestore",
+    "deploy:rules": "npx firebase-tools deploy --only firestore:rules",
+    "deploy:indexes": "npx firebase-tools deploy --only firestore:indexes"
+  },
+  "keywords": ["hostel", "inventory", "react", "firebase"],
+  "author": "",
+  "license": "MIT"
+}

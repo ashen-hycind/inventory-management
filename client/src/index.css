@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Palette from Image */
+  --color-slate: #62736F;
+  --color-sage: #9FAD9F;
+  --color-oatmeal: #D9D0C7;
+  --color-peach: #E8B5A7;
+  --color-terracotta: #DB846E;
+  --color-ink: #242E2C;
+  --color-paper: #FAF8F5;
+  --color-surface: #FFFFFF;
+
+  /* Ambient soft atmospheric glows */
+  --glow-terracotta: rgba(219, 132, 110, 0.07);
+  --glow-sage: rgba(159, 173, 159, 0.08);
+  --glow-slate: rgba(98, 115, 111, 0.06);
+}
+
+@layer base {
+  body {
+    background-color: #F7F4EF;
+    background-image: 
+      radial-gradient(ellipse 65% 50% at 15% -10%, var(--glow-terracotta), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 10%, var(--glow-sage), transparent 50%),
+      radial-gradient(ellipse 70% 60% at 50% 100%, var(--glow-slate), transparent 70%),
+      radial-gradient(#D9D0C7 0.9px, transparent 0.9px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: 'opsz' 36, 'calt' 1;
+    letter-spacing: -0.025em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'DM Mono', monospace;
+  }
+}
+
+/* Staggered entrance animations */
+@keyframes entranceFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: entranceFadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 80ms; }
+.delay-3 { animation-delay: 120ms; }
+.delay-4 { animation-delay: 160ms; }
+.delay-5 { animation-delay: 200ms; }
+.delay-6 { animation-delay: 240ms; }
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EFE9E2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D0C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #62736F;
+}
+
+/* Clean Receipt Print Styling */
+@media print {
+  nav, footer, .no-print, button {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+  }
+  .receipt-container {
+    box-shadow: none !important;
+    border: 1.5px solid #242E2C !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    background: white !important;
+  }
+}
