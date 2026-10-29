@@ -18,7 +18,16 @@
     "deploy:rules": "npx firebase-tools deploy --only firestore:rules",
     "deploy:indexes": "npx firebase-tools deploy --only firestore:indexes"
   },
-  "keywords": ["hostel", "inventory", "react", "firebase"],
+  "keywords": [
+    "hostel",
+    "inventory",
+    "react",
+    "firebase"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "autocannon": "^8.0.0",
+    "speakeasy": "^2.0.0"
+  }
 }
